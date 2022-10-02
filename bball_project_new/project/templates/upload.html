@@ -1,0 +1,42 @@
+
+{% extends 'layout.html' %}
+
+{% block content %}
+
+    <legend class="border-bottom mg-4">
+    <h1>Basketball Image Classifier:</h1>
+    </legend><br>
+    <p>Please submit a photo and the algorithm will decide whether it's basketball-related.</p>
+    <br>
+{#    <form method="POST", action="{{ url_for('predict') }}">#}
+{#        <b>#}
+{#            Please submit photo:#}
+{#        </b>#}
+{#        <input type="submit", value="predict">#}
+{#    </form>#}
+
+    <div class="content-section">
+        <!-- Picture Submission Form -->
+
+        <form method="POST" action="" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+
+            <fieldset class="form-group">
+
+                <div class="form-group">
+                    {{ form.image.label() }}
+                    {{ form.image(class='form-control-file') }}
+                    {% if form.image.errors %}
+                        {% for error in form.image.errors %}
+                            <span class="text-danger">{{ error }}</span><br>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            </fieldset>
+
+            <div class="form-group">
+                {{ form.submit(class='btn btn-outline-info') }}
+            </div>
+        </form>
+    </div>
+{% endblock content %}

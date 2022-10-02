@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+    <h1>Picture Classification Outcome</h1>
+
+{#    <p>Data submitted has length - {{ data[0].items() }}</p>#}
+    <br>
+
+    <p> The machine has determined that the image passed is <strong>{{ data }}</strong> data. </p>
+
+    <p>User image path is: <b><i>{{ user_image }}</i></b>.</p>
+
+    <br><br>
+    <img src="{{ user_image }}" alt="User Image" width="100%">
+
+
+{#    {% if filename %}#}
+{##}
+{#        <h1> {{ filename }}</h1>#}
+{##}
+{#        <div>#}
+{#            <img src="{{ url_for('classify_image', filename=filename) }}">#}
+{#        </div>#}
+{#    {% endif %}#}
+
+{% endblock content %}
