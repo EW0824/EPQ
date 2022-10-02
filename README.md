@@ -1,3 +1,5 @@
+# EPQ - Extended Project Qualification (Artefact)
+
 'bball_project_new' contains the flask web application which the CNN model will be hosted on. The CNN model is still under development and in repo: Machine Learning.
 
 
